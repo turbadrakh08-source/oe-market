@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Upload - OE Market</title>
+  </head>
+
+  <body class="text-lg">
+    <div class="container mx-auto">
+      <!-- NAVBAR -->
+      <nav class="bg-white shadow-md">
+        <div
+          class="container mx-auto flex justify-between items-center py-4 px-4"
+        >
+          <div class="text-2xl font-bold text-primary">OE Market</div>
+
+          <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+          <!-- AUTH -->
+          <div id="authSection">
+            <a href="logIn.html" class="px-4 py-2">Log In</a>
+            <a href="signUp.html" class="px-4 py-2">Sign Up</a>
+          </div>
+
+          <!-- USER -->
+          <div id="userSection" class="hidden relative flex items-center gap-3">
+            <span id="welcomeText" class="font-semibold text-gray-700"></span>
+            <a
+              href="saved.html"
+              class="text-2xl transition transform hover:scale-110"
+              >🛍</a
+            >
+            <img
+              id="userAvatar"
+              src="./image/profile.jpg"
+              class="w-10 h-10 rounded-full cursor-pointer"
+            />
+
+            <!-- DROPDOWN -->
+            <div
+              id="dropdownMenu"
+              class="hidden absolute right-0 top-12 bg-white shadow-lg rounded-lg w-32"
+            >
+              <button
+                id="logoutBtn"
+                class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section class="grid md:grid-cols-3 gap-6 px-4 py-8">
+        <!-- SELL -->
+        <button
+          class="sell-btn bg-white shadow-md rounded-xl p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <h2 class="text-xl font-bold mb-2">Sell Clothes</h2>
+          <p class="text-gray-600">
+            Upload your unused clothes and list them for other students.
+          </p>
+        </button>
+
+        <!-- BUY -->
+        <button
+          class="buy-btn bg-white shadow-md rounded-xl p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <h2 class="text-xl font-bold mb-2">Buy Affordable</h2>
+          <p class="text-gray-600">
+            Discover trendy clothes at student-friendly prices.
+          </p>
+        </button>
+
+        <!-- ECO -->
+        <button
+          class="eco-btn bg-white shadow-md rounded-xl p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <h2 class="text-xl font-bold mb-2">Eco-Friendly</h2>
+          <p class="text-gray-600">
+            Reduce waste by reusing clothes instead of throwing them away.
+          </p>
+        </button>
+      </section>
+      <!-- TABLE -->
+      <section class="px-4 py-10">
+        <h2 class="text-3xl font-bold text-center mb-6">Marketplace</h2>
+
+        <div class="overflow-x-auto">
+          <table
+            class="w-full border border-gray-300 rounded-lg overflow-hidden"
+          >
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="p-3 text-left">Image</th>
+                <th class="p-3 text-left">Item</th>
+                <th class="p-3 text-left">Size</th>
+                <th class="p-3 text-left">Price</th>
+                <th class="p-3 text-left">Condition</th>
+                <th class="p-3 text-left">Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="tableBody">
+              <!-- INPUT ROW -->
+              <tr class="border-t bg-gray-50"></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/navbar.js"></script>
+    <script src="js/marketplace.js"></script>
+    <script src="js/service.js"></script>
+  </body>
+</html>

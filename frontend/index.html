@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet" />
+    <title>Future FUllstack</title>
+  </head>
+  <body class="text-lg">
+    <div class="container mx-auto">
+      <header>
+        <nav class="bg-white shadow-md">
+          <div
+            class="container mx-auto flex justify-between items-center py-4 px-4"
+          >
+            <div class="text-2xl font-bold text-primary">OE Market</div>
+            <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+              <li>
+                <a
+                  href="index.html"
+                  class="relative inline-block after:block after:h-[2px] after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="service.html"
+                  class="relative inline-block after:block after:h-[2px] after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+                >
+                  Service
+                </a>
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="relative inline-block after:block after:h-[2px] after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <!-- AUTH (not logged in) -->
+            <div id="authSection">
+              <a href="logIn.html" class="px-4 py-2">Log In</a>
+              <a href="signUp.html" class="px-4 py-2">Sign Up</a>
+            </div>
+
+            <!-- USER (logged in) -->
+            <div
+              id="userSection"
+              class="hidden relative flex items-center gap-3"
+            >
+              <span id="welcomeText" class="font-semibold text-gray-700"></span>
+
+              <a
+                href="saved.html"
+                class="text-2xl transition transform hover:scale-110"
+                >🛍</a
+              >
+              <img
+                id="userAvatar"
+                src="./image/profile.jpg"
+                class="w-10 h-10 rounded-full cursor-pointer"
+              />
+
+              <div
+                id="dropdownMenu"
+                class="hidden absolute right-0 top-12 bg-white shadow-lg rounded-lg w-32"
+              >
+                <button
+                  id="logoutBtn"
+                  class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <section class="h-screen grid grid-cols-2 items-center gap-10">
+          <div class="justify-items-center">
+            <img src="image/logo.png" class="w-40" />
+
+            <h1 class="text-5xl font-bold leading-tight text-gray-900">
+              We are <span class="text-[#9c9384]">OE Market</span>
+            </h1>
+
+            <p class="text-xl text-gray-600 max-w-md">
+              A student marketplace where you can sell your unused clothes and
+              discover affordable styles from others.
+            </p>
+
+            <p class="text-lg text-gray-500">
+              Turn your old clothes into someone else's new favorite.
+            </p>
+
+            <div class="flex gap-4 mt-4">
+              <a
+                href="service.html"
+                class="bg-[#9c9384] text-white px-6 py-3 rounded-xl hover:bg-[#574939] transition"
+              >
+                Get Started
+              </a>
+              <a
+                href="#"
+                id="learnMoreBtn"
+                class="border border-gray-300 px-6 py-3 rounded-xl hover:bg-gray-100 transition"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <div class="flex justify-center relative w-full h-full">
+              <!-- IMAGE -->
+              <img
+                id="heroImage"
+                src="image/hero2.jpg"
+                class="w-3/4 rounded-2xl shadow-lg transition duration-500"
+              />
+
+              <!-- INFO PANEL -->
+              <div
+                id="infoPanel"
+                class="absolute w-3/4 bg-white rounded-2xl shadow-lg p-6 opacity-0 scale-90 transition duration-500"
+              >
+                <h2 class="text-2xl font-bold mb-3">Why OE Market?</h2>
+
+                <p class="text-gray-600 mb-2">
+                  We created OE Market to help students give their clothes a
+                  second life.
+                </p>
+
+                <p class="text-gray-600 mb-2">
+                  Instead of throwing away unused clothes, you can sell them and
+                  help others save money.
+                </p>
+
+                <p class="text-gray-600">
+                  It's simple, affordable, and eco-friendly 🌱
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </header>
+    </div>
+  </body>
+  <script src="js/index.js"></script>
+  <script src="js/navbar.js"></script>
+</html>

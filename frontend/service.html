@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Services - OE Market</title>
+  </head>
+
+  <body class="text-lg">
+    <script src="js/service.js"></script>
+    <div class="container mx-auto">
+      <!-- NAVBAR -->
+      <nav class="bg-white shadow-md">
+        <div
+          class="container mx-auto flex justify-between items-center py-4 px-4"
+        >
+          <div class="text-2xl font-bold text-primary">OE Market</div>
+          <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+            <li>
+              <a
+                href="index.html"
+                class="relative inline-block after:block after:h-[2px] after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="relative inline-block after:block after:h-[2px] after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                Service
+              </a>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="relative inline-block after:block after:h-[2px] after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+          <!-- AUTH (not logged in) -->
+          <div id="authSection">
+            <a href="logIn.html" class="px-4 py-2">Log In</a>
+            <a href="signUp.html" class="px-4 py-2">Sign Up</a>
+          </div>
+
+          <!-- USER (logged in) -->
+          <div id="userSection" class="hidden flex items-center gap-3">
+            <span id="welcomeText" class="font-semibold text-gray-700"></span>
+            <a
+              href="saved.html"
+              class="text-2xl transition transform hover:scale-110"
+              >🛍</a
+            >
+            <img
+              id="userAvatar"
+              src="./image/profile.jpg"
+              class="w-10 h-10 rounded-full cursor-pointer"
+            />
+            <!-- DROPDOWN -->
+            <div
+              id="dropdownMenu"
+              class="hidden absolute right-0 top-12 bg-white shadow-lg rounded-lg w-32"
+            >
+              <button
+                id="logoutBtn"
+                class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <section class="text-center py-12">
+        <h1 class="text-4xl font-bold text-gray-900">What We Do</h1>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          OE Market is a student-driven platform where you can buy and sell
+          second-hand clothes easily. Instead of throwing away unused clothes,
+          students can give them a second life while earning money.
+        </p>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="grid md:grid-cols-3 gap-6 px-4 py-8">
+        <!-- SELL -->
+        <button
+          class="sell-btn bg-white shadow-md rounded-xl p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <h2 class="text-xl font-bold mb-2">Sell Clothes</h2>
+          <p class="text-gray-600">
+            Upload your unused clothes and list them for other students.
+          </p>
+        </button>
+
+        <!-- BUY -->
+        <button
+          class="buy-btn bg-white shadow-md rounded-xl p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <h2 class="text-xl font-bold mb-2">Buy Affordable</h2>
+          <p class="text-gray-600">
+            Discover trendy clothes at student-friendly prices.
+          </p>
+        </button>
+
+        <!-- ECO -->
+        <button
+          class="eco-btn bg-white shadow-md rounded-xl p-6 text-center hover:shadow-xl transition transform hover:-translate-y-1"
+        >
+          <h2 class="text-xl font-bold mb-2">Eco-Friendly</h2>
+          <p class="text-gray-600">
+            Reduce waste by reusing clothes instead of throwing them away.
+          </p>
+        </button>
+      </section>
+
+      <!-- TABLE EXAMPLES -->
+      <section class="px-4 py-10">
+        <h2 class="text-3xl font-bold text-center mb-6">Example Listings</h2>
+
+        <div class="overflow-x-auto">
+          <table
+            class="w-full border border-gray-300 rounded-lg overflow-hidden"
+          >
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="p-3 text-left">Image</th>
+                <th class="p-3 text-left">Item</th>
+                <th class="p-3 text-left">Size</th>
+                <th class="p-3 text-left">Price</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr class="border-t">
+                <td class="p-3">
+                  <img src="image/hoodie.png" class="w-20 rounded-lg" />
+                </td>
+                <td class="p-3">Hoodie</td>
+                <td class="p-3">M</td>
+                <td class="p-3 text-[#9c9384] font-bold">$10</td>
+              </tr>
+
+              <tr class="border-t">
+                <td class="p-3">
+                  <img src="image/sweatpants.png" class="w-20 rounded-lg" />
+                </td>
+                <td class="p-3">Sweat Pants</td>
+                <td class="p-3">L</td>
+                <td class="p-3 text-[#9c9384] font-bold">$15</td>
+              </tr>
+
+              <tr class="border-t">
+                <td class="p-3">
+                  <img src="image/t-shirt.png" class="w-20 rounded-lg" />
+                </td>
+                <td class="p-3">T-Shirt</td>
+                <td class="p-3">S</td>
+                <td class="p-3 text-[#9c9384] font-bold">$5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="js/navbar.js"></script>
+</html>

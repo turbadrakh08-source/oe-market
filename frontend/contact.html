@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <title>Contact - OE Market</title>
+  </head>
+
+  <body class="text-lg bg-gray-50">
+    <div class="container mx-auto">
+      <!-- NAVBAR -->
+      <nav class="bg-white shadow-md">
+        <div
+          class="container mx-auto flex justify-between items-center py-4 px-4"
+        >
+          <div class="text-2xl font-bold text-primary">OE Market</div>
+          <ul class="hidden md:flex space-x-8 text-gray-700 font-medium">
+            <li>
+              <a
+                href="index.html"
+                class="relative inline-block after:block after:h-[2px] after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="service.html"
+                class="relative inline-block after:block after:h-[2px] after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                Service
+              </a>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="relative inline-block after:block after:h-[2px] after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+          <!-- AUTH (not logged in) -->
+          <div id="authSection">
+            <a href="logIn.html" class="px-4 py-2">Log In</a>
+            <a href="signUp.html" class="px-4 py-2">Sign Up</a>
+          </div>
+
+          <!-- USER (logged in) -->
+          <div id="userSection" class="hidden flex items-center gap-3">
+            <span id="welcomeText" class="font-semibold text-gray-700"></span>
+            <a
+              href="saved.html"
+              class="text-2xl transition transform hover:scale-110"
+              >🛍</a
+            >
+            <img
+              id="userAvatar"
+              src="./image/profile.jpg"
+              class="w-10 h-10 rounded-full cursor-pointer"
+            />
+            <!-- DROPDOWN -->
+            <div
+              id="dropdownMenu"
+              class="hidden absolute right-0 top-12 bg-white shadow-lg rounded-lg w-32"
+            >
+              <button
+                id="logoutBtn"
+                class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- HEADER -->
+      <section class="text-center py-12">
+        <h1 class="text-4xl font-bold text-gray-900">Contact Us</h1>
+        <p class="text-gray-600 mt-4">
+          Have questions? Want to sell your clothes? Get in touch with us.
+        </p>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section class="grid md:grid-cols-2 gap-10 px-6 py-10">
+        <!-- LEFT SIDE -->
+        <div class="space-y-6">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900">Get in Touch</h2>
+            <p class="text-gray-600 mt-2">
+              We are here to help students buy and sell clothes easily. Reach
+              out anytime!
+            </p>
+          </div>
+
+          <div class="space-y-4 text-gray-700">
+            <p><strong>Email:</strong> support@oemarket.com</p>
+            <p><strong>Phone:</strong> +36 123 456 789</p>
+            <p><strong>Location:</strong> Budapest, Hungary</p>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE FORM -->
+        <form class="bg-white shadow-md rounded-xl p-6 space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">
+              Name
+            </label>
+            <input
+              type="text"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#9c9384]"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#9c9384]"
+              placeholder="Your email"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700">
+              Message
+            </label>
+            <textarea
+              rows="4"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#9c9384]"
+              placeholder="Your message"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-[#9c9384] text-white py-3 rounded-lg hover:bg-[#574939] transition"
+          >
+            Send Message
+          </button>
+        </form>
+      </section>
+    </div>
+  </body>
+  <script src="js/navbar.js"></script>
+</html>
