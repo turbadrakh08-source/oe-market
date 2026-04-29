@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function loadPosts() {
     try {
-      const res = await fetch("http://localhost:4500/api/v1/listings/getPosts");
+      const res = await fetch(
+        "https://localhost:4500/api/v1/listings/getPosts",
+      );
 
       const posts = await res.json();
 
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         row.innerHTML = `
           <td class="p-3">
-            <img src="http://localhost:4500${post.image}" class="w-20"/>
+            <img src="https://localhost:4500${post.image}" class="w-20"/>
           </td>
           <td class="p-3">${post.title}</td>
           <td class="p-3">${post.size}</td>
@@ -49,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const res = await fetch(
-          "http://oe-market-backend.onrender.com/api/v1/saved/save",
+          "https://oe-market-backend.onrender.com/api/v1/saved/save",
           {
             method: "POST",
             headers: {

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function loadSaved() {
     const res = await fetch(
-      "http://oe-market-backend.onrender.com/api/v1/saved/saved",
+      "https://oe-market-backend.onrender.com/api/v1/saved/saved",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         "bg-white rounded-xl shadow hover:shadow-lg transition p-4";
 
       card.innerHTML = `
-        <img src="http://oe-market-backend.onrender.com${post.image}" class="w-full h-48 object-cover rounded"/>
+        <img src="https://oe-market-backend.onrender.com${post.image}" class="w-full h-48 object-cover rounded"/>
 
         <h3 class="font-bold mt-3">${post.title}</h3>
         <p class="text-gray-600">$${post.price}</p>
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const id = e.target.dataset.id;
 
       await fetch(
-        `http://oe-market-backend.onrender.com/api/v1/saved/saved/${id}`,
+        `https://oe-market-backend.onrender.com/api/v1/saved/saved/${id}`,
         {
           method: "DELETE",
           headers: {

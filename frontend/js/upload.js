@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        "http://oe-market-backend.onrender.com/api/v1/listings/my-posts",
+        "https://oe-market-backend.onrender.com/api/v1/listings/my-posts",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         row.innerHTML = `
           <td class="p-3">
-          <img src="http://oe-market-backend.onrender.com${post.image}" class="w-20"/>
+          <img src="https://oe-market-backend.onrender.com${post.image}" class="w-20"/>
           </td>
           <td class="p-3">${post.title}</td>
           <td class="p-3">${post.size || "-"}</td>
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const res = await fetch(
-        "http://oe-market-backend.onrender.com/api/v1/listings/create",
+        "https://oe-market-backend.onrender.com/api/v1/listings/create",
         {
           method: "POST",
           headers: {
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const res = await fetch(
-          `http://oe-market-backend.onrender.com/api/v1/listings/${id}`,
+          `https://oe-market-backend.onrender.com/api/v1/listings/${id}`,
           {
             method: "DELETE",
             headers: {
@@ -174,19 +174,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const res = await fetch(`http://localhost:4500/api/v1/listings/${id}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+        const res = await fetch(
+          `https://localhost:4500/api/v1/listings/${id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              title: newTitle,
+              price: Number(newPrice),
+              size: newSize,
+              condition: newCondition,
+            }),
           },
-          body: JSON.stringify({
-            title: newTitle,
-            price: Number(newPrice),
-            size: newSize,
-            condition: newCondition,
-          }),
-        });
+        );
 
         const data = await res.json();
 

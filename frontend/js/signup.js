@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const res = await fetch(
-        "http://oe-market-backend.onrender.com/api/v1/listings",
+        "https://oe-market-backend.onrender.com/api/v1/listings",
         {
           method: "POST",
           headers: {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         newRow.innerHTML = `
           <td class="p-3">
-            <img src="http://oe-market-backend.onrender.com${data.post.image}" class="w-20 rounded-lg"/>
+            <img src="https://oe-market-backend.onrender.com${data.post.image}" class="w-20 rounded-lg"/>
           </td>
           <td class="p-3">${data.post.title}</td>
           <td class="p-3">${size}</td>

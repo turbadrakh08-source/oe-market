@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const res = await fetch(
-        "http://oe-market-backend.onrender.com/api/v1/users/login",
+        "https://oe-market-backend.onrender.com/api/v1/users/login",
         {
           method: "POST",
           headers: {
