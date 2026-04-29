@@ -1,8 +1,13 @@
 import express from "express";
 import cors from "cors";
 
+app.use(
+  cors({
+    origin: "https://oe-market.vercel.app",
+    credentials: true,
+  }),
+);
 const app = express(); //create an Express app
-app.use(cors());
 
 app.use(express.json());
 
