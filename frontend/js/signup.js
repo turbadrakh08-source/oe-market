@@ -24,13 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append("image", file);
 
     try {
-      const res = await fetch("http://localhost:4500/api/v1/listings", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await fetch(
+        "http://oe-market-backend.onrender.com/api/v1/listings",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
         },
-        body: formData,
-      });
+      );
 
       const data = await res.json();
 
@@ -42,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         newRow.innerHTML = `
           <td class="p-3">
-            <img src="http://localhost:4500${data.post.image}" class="w-20 rounded-lg"/>
+            <img src="http://oe-market-backend.onrender.com${data.post.image}" class="w-20 rounded-lg"/>
           </td>
           <td class="p-3">${data.post.title}</td>
           <td class="p-3">${size}</td>

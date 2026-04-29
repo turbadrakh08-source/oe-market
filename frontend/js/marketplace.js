@@ -48,14 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const res = await fetch("http://localhost:4500/api/v1/saved/save", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+        const res = await fetch(
+          "http://oe-market-backend.onrender.com/api/v1/saved/save",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ postId }),
           },
-          body: JSON.stringify({ postId }),
-        });
+        );
 
         const data = await res.json();
 
