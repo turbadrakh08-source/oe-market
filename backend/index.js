@@ -4,9 +4,6 @@ import app from "./app.js";
 
 dotenv.config();
 
-console.log("STARTING SERVER...");
-console.log("MONGO:", process.env.MONGODB_URI);
-
 const startServer = async () => {
   try {
     await connectDB();
