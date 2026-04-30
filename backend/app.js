@@ -3,7 +3,14 @@ import cors from "cors";
 
 const app = express();
 
-app.use(cors()); // ✅ THIS FIXES YOUR ERROR
+// app.use(cors()); // ✅ THIS FIXES YOUR ERROR
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "https://your-app.vercel.app",
+  }),
+);
 
 app.use(express.json());
 
