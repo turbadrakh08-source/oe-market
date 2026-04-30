@@ -5,7 +5,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://your-app.vercel.app",
+    origin:
+      "https://oe-market-k197rd9cb-turbadrakh08-1181s-projects.vercel.app",
   }),
 );
 
