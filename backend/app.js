@@ -2,13 +2,7 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-
-app.use(
-  cors({
-    origin:
-      "https://oe-market-k197rd9cb-turbadrakh08-1181s-projects.vercel.app",
-  }),
-);
+app.use(cors());
 
 app.use(express.json());
 

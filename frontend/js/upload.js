@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        "https://oe-market-backend.onrender.com/api/v1/listings/my-posts",
+        "http://localhost:4500/api/v1/listings/my-posts",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         row.innerHTML = `
           <td class="p-3">
-          <img src="https://oe-market-backend.onrender.com${post.image}" class="w-20"/>
+          <img src="http://localhost:4500${post.image}" class="w-20"/>
           </td>
           <td class="p-3">${post.title}</td>
           <td class="p-3">${post.size || "-"}</td>
@@ -84,16 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append("image", file);
 
     try {
-      const res = await fetch(
-        "https://oe-market-backend.onrender.com/api/v1/listings/create",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          body: formData,
+      const res = await fetch("http://localhost:4500/api/v1/listings/create", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      );
+        body: formData,
+      });
 
       const data = await res.json();
 
@@ -129,15 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!confirm("Delete this item?")) return;
 
       try {
-        const res = await fetch(
-          `https://oe-market-backend.onrender.com/api/v1/listings/${id}`,
-          {
-            method: "DELETE",
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
+        const res = await fetch(`http://localhost:4500/api/v1/listings/${id}`, {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
           },
-        );
+        });
 
         const data = await res.json();
 
@@ -174,22 +168,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const res = await fetch(
-          `https://localhost:4500/api/v1/listings/${id}`,
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-              title: newTitle,
-              price: Number(newPrice),
-              size: newSize,
-              condition: newCondition,
-            }),
+        const res = await fetch(`http://localhost:4500/api/v1/listings/${id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
-        );
+          body: JSON.stringify({
+            title: newTitle,
+            price: Number(newPrice),
+            size: newSize,
+            condition: newCondition,
+          }),
+        });
 
         const data = await res.json();
 

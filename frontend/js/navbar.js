@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     welcomeText.textContent = `Hi, ${user.username}`;
 
     avatar.src = user.image
-      ? `https://oe-market-backend.onrender.com${encodeURI(user.image)}`
+      ? `http://localhost:4500${user.image}`
       : "./image/profile.jpg";
   }
 

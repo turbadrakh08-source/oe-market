@@ -10,14 +10,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   async function loadSaved() {
-    const res = await fetch(
-      "https://oe-market-backend.onrender.com/api/v1/saved/saved",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+    const res = await fetch("http://localhost:4500/api/v1/saved/saved", {
+      headers: {
+        Authorization: `Bearer ${token}`,
       },
-    );
+    });
 
     const data = await res.json();
 
@@ -40,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         "bg-white rounded-xl shadow hover:shadow-lg transition p-4";
 
       card.innerHTML = `
-        <img src="https://oe-market-backend.onrender.com${post.image}" class="w-full h-48 object-cover rounded"/>
+        <img src="http://localhost:4500${post.image}" class="w-full h-48 object-cover rounded"/>
 
         <h3 class="font-bold mt-3">${post.title}</h3>
         <p class="text-gray-600">$${post.price}</p>
@@ -66,15 +63,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (e.target.classList.contains("removeBtn")) {
       const id = e.target.dataset.id;
 
-      await fetch(
-        `https://oe-market-backend.onrender.com/api/v1/saved/saved/${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+      await fetch(`http://localhost:4500/api/v1/saved/saved/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      );
+      });
 
       loadSaved();
     }
